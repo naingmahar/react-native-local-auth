@@ -1,10 +1,12 @@
+def _ext = rootProject.ext
+
 buildscript {
     repositories {
         jcenter()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        classpath _ext.has('gradleBuildTools') ? _ext.gradleBuildTools : 'com.android.tools.build:gradle:3.4.0'
     }
 }
 
